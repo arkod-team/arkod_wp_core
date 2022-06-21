@@ -31,13 +31,11 @@ class Endpoint with _$Endpoint {
 /// Endpoint type
 enum EndpointType { docker, agent, azure }
 
-EndpointType endpointTypeFromJson(String type) =>
-    EndpointType.values.firstWhereOrNull((t) => t.name == type) ?? EndpointType.docker;
+EndpointType endpointTypeFromJson(String type) => EndpointType.values.firstWhere((t) => t.name == type);
 String endpointTypeToJson(EndpointType type) => type.name;
 
 /// Endpoint status
 enum EndpointStatus { up, down }
 
-EndpointStatus endpointStatusFromJson(String type) =>
-    EndpointStatus.values.firstWhereOrNull((t) => t.name == type) ?? EndpointStatus.down;
+EndpointStatus endpointStatusFromJson(String type) => EndpointStatus.values.firstWhere((t) => t.name == type);
 String endpointStatusToJson(EndpointStatus type) => type.name;

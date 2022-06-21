@@ -53,6 +53,5 @@ class Engine with _$Engine {
 /// Engine type
 enum EngineType { portainer }
 
-EngineType _engineTypeFromJson(String type) =>
-    EngineType.values.firstWhereOrNull((t) => t.name == type) ?? EngineType.portainer;
+EngineType _engineTypeFromJson(String type) => EngineType.values.firstWhere((t) => t.name == type);
 String _engineTypeToJson(EngineType type) => type.name;

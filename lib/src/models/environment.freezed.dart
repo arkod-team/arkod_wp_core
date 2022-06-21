@@ -12,45 +12,11 @@ part of 'environment.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Environment _$EnvironmentFromJson(Map<String, dynamic> json) {
   return _Environment.fromJson(json);
 }
-
-/// @nodoc
-class _$EnvironmentTearOff {
-  const _$EnvironmentTearOff();
-
-  _Environment call(
-      {required int id,
-      required DateTime createdAt,
-      required int websiteId,
-      required int engineId,
-      required int endpointId,
-      required int stackId,
-      required String websiteUrl,
-      @JsonKey(ignore: true)
-          EnvironmentStatus status = EnvironmentStatus.stopped}) {
-    return _Environment(
-      id: id,
-      createdAt: createdAt,
-      websiteId: websiteId,
-      engineId: engineId,
-      endpointId: endpointId,
-      stackId: stackId,
-      websiteUrl: websiteUrl,
-      status: status,
-    );
-  }
-
-  Environment fromJson(Map<String, Object?> json) {
-    return Environment.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Environment = _$EnvironmentTearOff();
 
 /// @nodoc
 mixin _$Environment {
@@ -158,11 +124,11 @@ class _$EnvironmentCopyWithImpl<$Res> implements $EnvironmentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EnvironmentCopyWith<$Res>
+abstract class _$$_EnvironmentCopyWith<$Res>
     implements $EnvironmentCopyWith<$Res> {
-  factory _$EnvironmentCopyWith(
-          _Environment value, $Res Function(_Environment) then) =
-      __$EnvironmentCopyWithImpl<$Res>;
+  factory _$$_EnvironmentCopyWith(
+          _$_Environment value, $Res Function(_$_Environment) then) =
+      __$$_EnvironmentCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -176,14 +142,14 @@ abstract class _$EnvironmentCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EnvironmentCopyWithImpl<$Res> extends _$EnvironmentCopyWithImpl<$Res>
-    implements _$EnvironmentCopyWith<$Res> {
-  __$EnvironmentCopyWithImpl(
-      _Environment _value, $Res Function(_Environment) _then)
-      : super(_value, (v) => _then(v as _Environment));
+class __$$_EnvironmentCopyWithImpl<$Res> extends _$EnvironmentCopyWithImpl<$Res>
+    implements _$$_EnvironmentCopyWith<$Res> {
+  __$$_EnvironmentCopyWithImpl(
+      _$_Environment _value, $Res Function(_$_Environment) _then)
+      : super(_value, (v) => _then(v as _$_Environment));
 
   @override
-  _Environment get _value => super._value as _Environment;
+  _$_Environment get _value => super._value as _$_Environment;
 
   @override
   $Res call({
@@ -196,7 +162,7 @@ class __$EnvironmentCopyWithImpl<$Res> extends _$EnvironmentCopyWithImpl<$Res>
     Object? websiteUrl = freezed,
     Object? status = freezed,
   }) {
-    return _then(_Environment(
+    return _then(_$_Environment(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -249,37 +215,36 @@ class _$_Environment implements _Environment {
   factory _$_Environment.fromJson(Map<String, dynamic> json) =>
       _$$_EnvironmentFromJson(json);
 
-  @override
-
   /// Environment ID
-  final int id;
   @override
+  final int id;
 
   /// Environment creation date
-  final DateTime createdAt;
   @override
+  final DateTime createdAt;
 
   /// Environment website ID
-  final int websiteId;
   @override
+  final int websiteId;
 
   /// Environment engine ID
-  final int engineId;
   @override
+  final int engineId;
 
   /// Environment endpoint ID
-  final int endpointId;
   @override
+  final int endpointId;
 
   /// Environment stack ID
-  final int stackId;
   @override
+  final int stackId;
 
   /// Website URL for this environment
-  final String websiteUrl;
   @override
+  final String websiteUrl;
 
   /// Environment status
+  @override
   @JsonKey(ignore: true)
   final EnvironmentStatus status;
 
@@ -292,7 +257,7 @@ class _$_Environment implements _Environment {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Environment &&
+            other is _$_Environment &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
             const DeepCollectionEquality().equals(other.websiteId, websiteId) &&
@@ -305,6 +270,7 @@ class _$_Environment implements _Environment {
             const DeepCollectionEquality().equals(other.status, status));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -319,8 +285,8 @@ class _$_Environment implements _Environment {
 
   @JsonKey(ignore: true)
   @override
-  _$EnvironmentCopyWith<_Environment> get copyWith =>
-      __$EnvironmentCopyWithImpl<_Environment>(this, _$identity);
+  _$$_EnvironmentCopyWith<_$_Environment> get copyWith =>
+      __$$_EnvironmentCopyWithImpl<_$_Environment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -330,14 +296,14 @@ class _$_Environment implements _Environment {
 
 abstract class _Environment implements Environment {
   const factory _Environment(
-      {required int id,
-      required DateTime createdAt,
-      required int websiteId,
-      required int engineId,
-      required int endpointId,
-      required int stackId,
-      required String websiteUrl,
-      @JsonKey(ignore: true) EnvironmentStatus status}) = _$_Environment;
+      {required final int id,
+      required final DateTime createdAt,
+      required final int websiteId,
+      required final int engineId,
+      required final int endpointId,
+      required final int stackId,
+      required final String websiteUrl,
+      @JsonKey(ignore: true) final EnvironmentStatus status}) = _$_Environment;
 
   factory _Environment.fromJson(Map<String, dynamic> json) =
       _$_Environment.fromJson;
@@ -345,38 +311,38 @@ abstract class _Environment implements Environment {
   @override
 
   /// Environment ID
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// Environment creation date
-  DateTime get createdAt;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
 
   /// Environment website ID
-  int get websiteId;
+  int get websiteId => throw _privateConstructorUsedError;
   @override
 
   /// Environment engine ID
-  int get engineId;
+  int get engineId => throw _privateConstructorUsedError;
   @override
 
   /// Environment endpoint ID
-  int get endpointId;
+  int get endpointId => throw _privateConstructorUsedError;
   @override
 
   /// Environment stack ID
-  int get stackId;
+  int get stackId => throw _privateConstructorUsedError;
   @override
 
   /// Website URL for this environment
-  String get websiteUrl;
+  String get websiteUrl => throw _privateConstructorUsedError;
   @override
 
   /// Environment status
   @JsonKey(ignore: true)
-  EnvironmentStatus get status;
+  EnvironmentStatus get status => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EnvironmentCopyWith<_Environment> get copyWith =>
+  _$$_EnvironmentCopyWith<_$_Environment> get copyWith =>
       throw _privateConstructorUsedError;
 }

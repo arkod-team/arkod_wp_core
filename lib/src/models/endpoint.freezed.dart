@@ -12,40 +12,11 @@ part of 'endpoint.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Endpoint _$EndpointFromJson(Map<String, dynamic> json) {
   return _Endpoint.fromJson(json);
 }
-
-/// @nodoc
-class _$EndpointTearOff {
-  const _$EndpointTearOff();
-
-  _Endpoint call(
-      {required int id,
-      required String name,
-      required String url,
-      @JsonKey(fromJson: endpointTypeFromJson, toJson: endpointTypeToJson)
-          required EndpointType type,
-      @JsonKey(fromJson: endpointStatusFromJson, toJson: endpointStatusToJson)
-          required EndpointStatus status}) {
-    return _Endpoint(
-      id: id,
-      name: name,
-      url: url,
-      type: type,
-      status: status,
-    );
-  }
-
-  Endpoint fromJson(Map<String, Object?> json) {
-    return Endpoint.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Endpoint = _$EndpointTearOff();
 
 /// @nodoc
 mixin _$Endpoint {
@@ -128,9 +99,10 @@ class _$EndpointCopyWithImpl<$Res> implements $EndpointCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EndpointCopyWith<$Res> implements $EndpointCopyWith<$Res> {
-  factory _$EndpointCopyWith(_Endpoint value, $Res Function(_Endpoint) then) =
-      __$EndpointCopyWithImpl<$Res>;
+abstract class _$$_EndpointCopyWith<$Res> implements $EndpointCopyWith<$Res> {
+  factory _$$_EndpointCopyWith(
+          _$_Endpoint value, $Res Function(_$_Endpoint) then) =
+      __$$_EndpointCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -143,13 +115,14 @@ abstract class _$EndpointCopyWith<$Res> implements $EndpointCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$EndpointCopyWithImpl<$Res> extends _$EndpointCopyWithImpl<$Res>
-    implements _$EndpointCopyWith<$Res> {
-  __$EndpointCopyWithImpl(_Endpoint _value, $Res Function(_Endpoint) _then)
-      : super(_value, (v) => _then(v as _Endpoint));
+class __$$_EndpointCopyWithImpl<$Res> extends _$EndpointCopyWithImpl<$Res>
+    implements _$$_EndpointCopyWith<$Res> {
+  __$$_EndpointCopyWithImpl(
+      _$_Endpoint _value, $Res Function(_$_Endpoint) _then)
+      : super(_value, (v) => _then(v as _$_Endpoint));
 
   @override
-  _Endpoint get _value => super._value as _Endpoint;
+  _$_Endpoint get _value => super._value as _$_Endpoint;
 
   @override
   $Res call({
@@ -159,7 +132,7 @@ class __$EndpointCopyWithImpl<$Res> extends _$EndpointCopyWithImpl<$Res>
     Object? type = freezed,
     Object? status = freezed,
   }) {
-    return _then(_Endpoint(
+    return _then(_$_Endpoint(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -199,26 +172,25 @@ class _$_Endpoint implements _Endpoint {
   factory _$_Endpoint.fromJson(Map<String, dynamic> json) =>
       _$$_EndpointFromJson(json);
 
-  @override
-
   /// Endpoint ID
-  final int id;
   @override
+  final int id;
 
   /// Endpoint name
-  final String name;
   @override
+  final String name;
 
   /// Endpoint Docker host URL
-  final String url;
   @override
+  final String url;
 
   /// Endpoint type
+  @override
   @JsonKey(fromJson: endpointTypeFromJson, toJson: endpointTypeToJson)
   final EndpointType type;
-  @override
 
   /// Endpoint status
+  @override
   @JsonKey(fromJson: endpointStatusFromJson, toJson: endpointStatusToJson)
   final EndpointStatus status;
 
@@ -231,7 +203,7 @@ class _$_Endpoint implements _Endpoint {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Endpoint &&
+            other is _$_Endpoint &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.url, url) &&
@@ -239,6 +211,7 @@ class _$_Endpoint implements _Endpoint {
             const DeepCollectionEquality().equals(other.status, status));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -250,8 +223,8 @@ class _$_Endpoint implements _Endpoint {
 
   @JsonKey(ignore: true)
   @override
-  _$EndpointCopyWith<_Endpoint> get copyWith =>
-      __$EndpointCopyWithImpl<_Endpoint>(this, _$identity);
+  _$$_EndpointCopyWith<_$_Endpoint> get copyWith =>
+      __$$_EndpointCopyWithImpl<_$_Endpoint>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -261,40 +234,40 @@ class _$_Endpoint implements _Endpoint {
 
 abstract class _Endpoint implements Endpoint {
   const factory _Endpoint(
-      {required int id,
-      required String name,
-      required String url,
+      {required final int id,
+      required final String name,
+      required final String url,
       @JsonKey(fromJson: endpointTypeFromJson, toJson: endpointTypeToJson)
-          required EndpointType type,
+          required final EndpointType type,
       @JsonKey(fromJson: endpointStatusFromJson, toJson: endpointStatusToJson)
-          required EndpointStatus status}) = _$_Endpoint;
+          required final EndpointStatus status}) = _$_Endpoint;
 
   factory _Endpoint.fromJson(Map<String, dynamic> json) = _$_Endpoint.fromJson;
 
   @override
 
   /// Endpoint ID
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint name
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint Docker host URL
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint type
   @JsonKey(fromJson: endpointTypeFromJson, toJson: endpointTypeToJson)
-  EndpointType get type;
+  EndpointType get type => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint status
   @JsonKey(fromJson: endpointStatusFromJson, toJson: endpointStatusToJson)
-  EndpointStatus get status;
+  EndpointStatus get status => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EndpointCopyWith<_Endpoint> get copyWith =>
+  _$$_EndpointCopyWith<_$_Endpoint> get copyWith =>
       throw _privateConstructorUsedError;
 }

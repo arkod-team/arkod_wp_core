@@ -12,54 +12,11 @@ part of 'website.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Website _$WebsiteFromJson(Map<String, dynamic> json) {
   return _Website.fromJson(json);
 }
-
-/// @nodoc
-class _$WebsiteTearOff {
-  const _$WebsiteTearOff();
-
-  _Website call(
-      {required int id,
-      required DateTime createdAt,
-      String name = 'my-website',
-      String title = 'My website',
-      String adminUsername = 'admin',
-      String adminPassword = 'password',
-      String adminEmail = 'admin@my-website.com',
-      String postsUrlStructure = '/blog/%postname%/',
-      String dbRootPassword = 'password',
-      String dbUser = 'admin',
-      String dbPassword = 'password',
-      String dbTablesPrefix = 'wp_',
-      List<Environment> environments = const []}) {
-    return _Website(
-      id: id,
-      createdAt: createdAt,
-      name: name,
-      title: title,
-      adminUsername: adminUsername,
-      adminPassword: adminPassword,
-      adminEmail: adminEmail,
-      postsUrlStructure: postsUrlStructure,
-      dbRootPassword: dbRootPassword,
-      dbUser: dbUser,
-      dbPassword: dbPassword,
-      dbTablesPrefix: dbTablesPrefix,
-      environments: environments,
-    );
-  }
-
-  Website fromJson(Map<String, Object?> json) {
-    return Website.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Website = _$WebsiteTearOff();
 
 /// @nodoc
 mixin _$Website {
@@ -209,9 +166,10 @@ class _$WebsiteCopyWithImpl<$Res> implements $WebsiteCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$WebsiteCopyWith<$Res> implements $WebsiteCopyWith<$Res> {
-  factory _$WebsiteCopyWith(_Website value, $Res Function(_Website) then) =
-      __$WebsiteCopyWithImpl<$Res>;
+abstract class _$$_WebsiteCopyWith<$Res> implements $WebsiteCopyWith<$Res> {
+  factory _$$_WebsiteCopyWith(
+          _$_Website value, $Res Function(_$_Website) then) =
+      __$$_WebsiteCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -230,13 +188,13 @@ abstract class _$WebsiteCopyWith<$Res> implements $WebsiteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$WebsiteCopyWithImpl<$Res> extends _$WebsiteCopyWithImpl<$Res>
-    implements _$WebsiteCopyWith<$Res> {
-  __$WebsiteCopyWithImpl(_Website _value, $Res Function(_Website) _then)
-      : super(_value, (v) => _then(v as _Website));
+class __$$_WebsiteCopyWithImpl<$Res> extends _$WebsiteCopyWithImpl<$Res>
+    implements _$$_WebsiteCopyWith<$Res> {
+  __$$_WebsiteCopyWithImpl(_$_Website _value, $Res Function(_$_Website) _then)
+      : super(_value, (v) => _then(v as _$_Website));
 
   @override
-  _Website get _value => super._value as _Website;
+  _$_Website get _value => super._value as _$_Website;
 
   @override
   $Res call({
@@ -254,7 +212,7 @@ class __$WebsiteCopyWithImpl<$Res> extends _$WebsiteCopyWithImpl<$Res>
     Object? dbTablesPrefix = freezed,
     Object? environments = freezed,
   }) {
-    return _then(_Website(
+    return _then(_$_Website(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -304,7 +262,7 @@ class __$WebsiteCopyWithImpl<$Res> extends _$WebsiteCopyWithImpl<$Res>
           : dbTablesPrefix // ignore: cast_nullable_to_non_nullable
               as String,
       environments: environments == freezed
-          ? _value.environments
+          ? _value._environments
           : environments // ignore: cast_nullable_to_non_nullable
               as List<Environment>,
     ));
@@ -327,74 +285,80 @@ class _$_Website implements _Website {
       this.dbUser = 'admin',
       this.dbPassword = 'password',
       this.dbTablesPrefix = 'wp_',
-      this.environments = const []});
+      final List<Environment> environments = const []})
+      : _environments = environments;
 
   factory _$_Website.fromJson(Map<String, dynamic> json) =>
       _$$_WebsiteFromJson(json);
 
-  @override
-
   /// Website ID
-  final int id;
   @override
+  final int id;
 
   /// Website creation date
-  final DateTime createdAt;
-  @JsonKey()
   @override
+  final DateTime createdAt;
 
   /// Website unique name
-  final String name;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String name;
 
   /// Website title
-  final String title;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String title;
 
   /// Website admin user's username
-  final String adminUsername;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String adminUsername;
 
   /// Website admin user's password
-  final String adminPassword;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String adminPassword;
 
   /// Website admin user's email address
-  final String adminEmail;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String adminEmail;
 
   /// Website's posts URL structure
-  final String postsUrlStructure;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String postsUrlStructure;
 
   /// Database root user's password
-  final String dbRootPassword;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String dbRootPassword;
 
   /// Database user's username
-  final String dbUser;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String dbUser;
 
   /// Database user's password
-  final String dbPassword;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String dbPassword;
 
   /// Prefix for WordPress tables in database
-  final String dbTablesPrefix;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String dbTablesPrefix;
 
   /// Website environments
-  final List<Environment> environments;
+  final List<Environment> _environments;
+
+  /// Website environments
+  @override
+  @JsonKey()
+  List<Environment> get environments {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_environments);
+  }
 
   @override
   String toString() {
@@ -405,7 +369,7 @@ class _$_Website implements _Website {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Website &&
+            other is _$_Website &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
             const DeepCollectionEquality().equals(other.name, name) &&
@@ -426,9 +390,10 @@ class _$_Website implements _Website {
             const DeepCollectionEquality()
                 .equals(other.dbTablesPrefix, dbTablesPrefix) &&
             const DeepCollectionEquality()
-                .equals(other.environments, environments));
+                .equals(other._environments, _environments));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -444,12 +409,12 @@ class _$_Website implements _Website {
       const DeepCollectionEquality().hash(dbUser),
       const DeepCollectionEquality().hash(dbPassword),
       const DeepCollectionEquality().hash(dbTablesPrefix),
-      const DeepCollectionEquality().hash(environments));
+      const DeepCollectionEquality().hash(_environments));
 
   @JsonKey(ignore: true)
   @override
-  _$WebsiteCopyWith<_Website> get copyWith =>
-      __$WebsiteCopyWithImpl<_Website>(this, _$identity);
+  _$$_WebsiteCopyWith<_$_Website> get copyWith =>
+      __$$_WebsiteCopyWithImpl<_$_Website>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -459,76 +424,76 @@ class _$_Website implements _Website {
 
 abstract class _Website implements Website {
   const factory _Website(
-      {required int id,
-      required DateTime createdAt,
-      String name,
-      String title,
-      String adminUsername,
-      String adminPassword,
-      String adminEmail,
-      String postsUrlStructure,
-      String dbRootPassword,
-      String dbUser,
-      String dbPassword,
-      String dbTablesPrefix,
-      List<Environment> environments}) = _$_Website;
+      {required final int id,
+      required final DateTime createdAt,
+      final String name,
+      final String title,
+      final String adminUsername,
+      final String adminPassword,
+      final String adminEmail,
+      final String postsUrlStructure,
+      final String dbRootPassword,
+      final String dbUser,
+      final String dbPassword,
+      final String dbTablesPrefix,
+      final List<Environment> environments}) = _$_Website;
 
   factory _Website.fromJson(Map<String, dynamic> json) = _$_Website.fromJson;
 
   @override
 
   /// Website ID
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// Website creation date
-  DateTime get createdAt;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
 
   /// Website unique name
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Website title
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
 
   /// Website admin user's username
-  String get adminUsername;
+  String get adminUsername => throw _privateConstructorUsedError;
   @override
 
   /// Website admin user's password
-  String get adminPassword;
+  String get adminPassword => throw _privateConstructorUsedError;
   @override
 
   /// Website admin user's email address
-  String get adminEmail;
+  String get adminEmail => throw _privateConstructorUsedError;
   @override
 
   /// Website's posts URL structure
-  String get postsUrlStructure;
+  String get postsUrlStructure => throw _privateConstructorUsedError;
   @override
 
   /// Database root user's password
-  String get dbRootPassword;
+  String get dbRootPassword => throw _privateConstructorUsedError;
   @override
 
   /// Database user's username
-  String get dbUser;
+  String get dbUser => throw _privateConstructorUsedError;
   @override
 
   /// Database user's password
-  String get dbPassword;
+  String get dbPassword => throw _privateConstructorUsedError;
   @override
 
   /// Prefix for WordPress tables in database
-  String get dbTablesPrefix;
+  String get dbTablesPrefix => throw _privateConstructorUsedError;
   @override
 
   /// Website environments
-  List<Environment> get environments;
+  List<Environment> get environments => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$WebsiteCopyWith<_Website> get copyWith =>
+  _$$_WebsiteCopyWith<_$_Website> get copyWith =>
       throw _privateConstructorUsedError;
 }

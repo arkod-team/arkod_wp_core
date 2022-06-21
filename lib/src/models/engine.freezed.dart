@@ -12,45 +12,11 @@ part of 'engine.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Engine _$EngineFromJson(Map<String, dynamic> json) {
   return _Engine.fromJson(json);
 }
-
-/// @nodoc
-class _$EngineTearOff {
-  const _$EngineTearOff();
-
-  _Engine call(
-      {required int id,
-      required DateTime createdAt,
-      required bool isInitialized,
-      required String name,
-      required String host,
-      @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
-          required EngineType type,
-      List<Endpoint>? endpoints,
-      String? apiKey}) {
-    return _Engine(
-      id: id,
-      createdAt: createdAt,
-      isInitialized: isInitialized,
-      name: name,
-      host: host,
-      type: type,
-      endpoints: endpoints,
-      apiKey: apiKey,
-    );
-  }
-
-  Engine fromJson(Map<String, Object?> json) {
-    return Engine.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Engine = _$EngineTearOff();
 
 /// @nodoc
 mixin _$Engine {
@@ -157,9 +123,9 @@ class _$EngineCopyWithImpl<$Res> implements $EngineCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EngineCopyWith<$Res> implements $EngineCopyWith<$Res> {
-  factory _$EngineCopyWith(_Engine value, $Res Function(_Engine) then) =
-      __$EngineCopyWithImpl<$Res>;
+abstract class _$$_EngineCopyWith<$Res> implements $EngineCopyWith<$Res> {
+  factory _$$_EngineCopyWith(_$_Engine value, $Res Function(_$_Engine) then) =
+      __$$_EngineCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -174,13 +140,13 @@ abstract class _$EngineCopyWith<$Res> implements $EngineCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
-    implements _$EngineCopyWith<$Res> {
-  __$EngineCopyWithImpl(_Engine _value, $Res Function(_Engine) _then)
-      : super(_value, (v) => _then(v as _Engine));
+class __$$_EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
+    implements _$$_EngineCopyWith<$Res> {
+  __$$_EngineCopyWithImpl(_$_Engine _value, $Res Function(_$_Engine) _then)
+      : super(_value, (v) => _then(v as _$_Engine));
 
   @override
-  _Engine get _value => super._value as _Engine;
+  _$_Engine get _value => super._value as _$_Engine;
 
   @override
   $Res call({
@@ -193,7 +159,7 @@ class __$EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
     Object? endpoints = freezed,
     Object? apiKey = freezed,
   }) {
-    return _then(_Engine(
+    return _then(_$_Engine(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -219,7 +185,7 @@ class __$EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
           : type // ignore: cast_nullable_to_non_nullable
               as EngineType,
       endpoints: endpoints == freezed
-          ? _value.endpoints
+          ? _value._endpoints
           : endpoints // ignore: cast_nullable_to_non_nullable
               as List<Endpoint>?,
       apiKey: apiKey == freezed
@@ -241,44 +207,52 @@ class _$_Engine implements _Engine {
       required this.host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           required this.type,
-      this.endpoints,
-      this.apiKey});
+      final List<Endpoint>? endpoints,
+      this.apiKey})
+      : _endpoints = endpoints;
 
   factory _$_Engine.fromJson(Map<String, dynamic> json) =>
       _$$_EngineFromJson(json);
 
-  @override
-
   /// Engine ID
-  final int id;
   @override
+  final int id;
 
   /// Engine creation date
-  final DateTime createdAt;
   @override
+  final DateTime createdAt;
 
   /// Is the engine initialized ?
-  final bool isInitialized;
   @override
+  final bool isInitialized;
 
   /// Engine name
-  final String name;
   @override
+  final String name;
 
   /// Engine host
-  final String host;
   @override
+  final String host;
 
   /// Engine type
+  @override
   @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
   final EngineType type;
-  @override
 
   /// Engine endpoints
-  final List<Endpoint>? endpoints;
+  final List<Endpoint>? _endpoints;
+
+  /// Engine endpoints
   @override
+  List<Endpoint>? get endpoints {
+    final value = _endpoints;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Engine API key
+  @override
   final String? apiKey;
 
   @override
@@ -290,7 +264,7 @@ class _$_Engine implements _Engine {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Engine &&
+            other is _$_Engine &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
             const DeepCollectionEquality()
@@ -298,10 +272,12 @@ class _$_Engine implements _Engine {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.host, host) &&
             const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.endpoints, endpoints) &&
+            const DeepCollectionEquality()
+                .equals(other._endpoints, _endpoints) &&
             const DeepCollectionEquality().equals(other.apiKey, apiKey));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -311,13 +287,13 @@ class _$_Engine implements _Engine {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(host),
       const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(endpoints),
+      const DeepCollectionEquality().hash(_endpoints),
       const DeepCollectionEquality().hash(apiKey));
 
   @JsonKey(ignore: true)
   @override
-  _$EngineCopyWith<_Engine> get copyWith =>
-      __$EngineCopyWithImpl<_Engine>(this, _$identity);
+  _$$_EngineCopyWith<_$_Engine> get copyWith =>
+      __$$_EngineCopyWithImpl<_$_Engine>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -327,52 +303,53 @@ class _$_Engine implements _Engine {
 
 abstract class _Engine implements Engine {
   const factory _Engine(
-      {required int id,
-      required DateTime createdAt,
-      required bool isInitialized,
-      required String name,
-      required String host,
+      {required final int id,
+      required final DateTime createdAt,
+      required final bool isInitialized,
+      required final String name,
+      required final String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
-          required EngineType type,
-      List<Endpoint>? endpoints,
-      String? apiKey}) = _$_Engine;
+          required final EngineType type,
+      final List<Endpoint>? endpoints,
+      final String? apiKey}) = _$_Engine;
 
   factory _Engine.fromJson(Map<String, dynamic> json) = _$_Engine.fromJson;
 
   @override
 
   /// Engine ID
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// Engine creation date
-  DateTime get createdAt;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
 
   /// Is the engine initialized ?
-  bool get isInitialized;
+  bool get isInitialized => throw _privateConstructorUsedError;
   @override
 
   /// Engine name
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Engine host
-  String get host;
+  String get host => throw _privateConstructorUsedError;
   @override
 
   /// Engine type
   @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
-  EngineType get type;
+  EngineType get type => throw _privateConstructorUsedError;
   @override
 
   /// Engine endpoints
-  List<Endpoint>? get endpoints;
+  List<Endpoint>? get endpoints => throw _privateConstructorUsedError;
   @override
 
   /// Engine API key
-  String? get apiKey;
+  String? get apiKey => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EngineCopyWith<_Engine> get copyWith => throw _privateConstructorUsedError;
+  _$$_EngineCopyWith<_$_Engine> get copyWith =>
+      throw _privateConstructorUsedError;
 }
