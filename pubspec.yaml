@@ -1,5 +1,5 @@
 name: arkod_wp_core
-description: A starting point for Dart libraries or applications.
+description: ARKOD WordPress core library.
 version: 0.0.1
 publish_to: none
 
