@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:arkod_wp_core/arkod_wp.dart';
 
 void main() {
