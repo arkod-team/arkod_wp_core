@@ -12,12 +12,12 @@ void main() {
       Endpoint(
         id: 1, // Provided by Portainer
         name: 'local',
-        url: 'arkod-wp.localhost',
+        url: 'unix:///var/run/docker.sock', // Provided by Portainer
         type: EndpointType.docker,
         status: EndpointStatus.up,
       )
     ],
-    apiKey: 'your-secret-api-key',
+    apiKey: 'secret-api-key-generated-by-initialization',
   );
 
   final website = Website(
