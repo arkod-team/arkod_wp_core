@@ -8,7 +8,7 @@ void main() {
     createdAt: DateTime.now(),
     isInitialized: true,
     name: 'local',
-    host: 'arkod-wp.localhost',
+    host: 'portainer.arkod-wp.localhost',
     type: EngineType.portainer,
     endpoints: [
       Endpoint(
