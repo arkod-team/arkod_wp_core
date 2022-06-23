@@ -1,6 +1,6 @@
 name: arkod_wp_core
 description: ARKOD WordPress core library providing models, utilities and features shared by ARKOD WordPress toolkit modules.
-version: 0.0.2
+version: 0.0.3
 homepage: https://arkod.fr
 repository: https://github.com/arkod-team/arkod_wp_core
 
