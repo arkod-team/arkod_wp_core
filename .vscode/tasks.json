@@ -12,5 +12,14 @@
         "dart run build_runner build"
       ]
     },
+    {
+      "type": "shell",
+      "group": "build",
+      "label": "Publish to pub.dev",
+      "detail": "dart pub publish",
+      "command": [
+        "dart pub publish"
+      ]
+    },
   ]
 }
