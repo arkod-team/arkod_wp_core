@@ -45,10 +45,28 @@ class EngineAlreadyInitializedException extends ArkodWPException {
   }) : super(message: message, origin: origin, stackTrace: stackTrace ?? StackTrace.current);
 }
 
+/// Engine API keys fetch failed exception
+class EngineApiKeysFetchFailedException extends ArkodWPException {
+  EngineApiKeysFetchFailedException({
+    String message = 'Could not fetch API keys',
+    Object? origin,
+    StackTrace? stackTrace,
+  }) : super(message: message, origin: origin, stackTrace: stackTrace ?? StackTrace.current);
+}
+
 /// Engine API key generate failed exception
 class EngineApiKeyGenerateException extends ArkodWPException {
   EngineApiKeyGenerateException({
     String message = 'Could not generate engine API key',
+    Object? origin,
+    StackTrace? stackTrace,
+  }) : super(message: message, origin: origin, stackTrace: stackTrace ?? StackTrace.current);
+}
+
+/// Engine API key delete failed exception
+class EngineApiKeyDeleteFailedException extends ArkodWPException {
+  EngineApiKeyDeleteFailedException({
+    String message = 'Could not delete engine API key',
     Object? origin,
     StackTrace? stackTrace,
   }) : super(message: message, origin: origin, stackTrace: stackTrace ?? StackTrace.current);
