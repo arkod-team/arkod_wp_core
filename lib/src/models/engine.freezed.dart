@@ -39,6 +39,9 @@ mixin _$Engine {
   @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
   EngineType get type => throw _privateConstructorUsedError;
 
+  /// Engine local endpoint ID
+  String? get localEndpointId => throw _privateConstructorUsedError;
+
   /// Engine endpoints
   List<Endpoint>? get endpoints => throw _privateConstructorUsedError;
 
@@ -62,6 +65,7 @@ abstract class $EngineCopyWith<$Res> {
       String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           EngineType type,
+      String? localEndpointId,
       List<Endpoint>? endpoints,
       String? apiKey});
 }
@@ -82,6 +86,7 @@ class _$EngineCopyWithImpl<$Res> implements $EngineCopyWith<$Res> {
     Object? name = freezed,
     Object? host = freezed,
     Object? type = freezed,
+    Object? localEndpointId = freezed,
     Object? endpoints = freezed,
     Object? apiKey = freezed,
   }) {
@@ -110,6 +115,10 @@ class _$EngineCopyWithImpl<$Res> implements $EngineCopyWith<$Res> {
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as EngineType,
+      localEndpointId: localEndpointId == freezed
+          ? _value.localEndpointId
+          : localEndpointId // ignore: cast_nullable_to_non_nullable
+              as String?,
       endpoints: endpoints == freezed
           ? _value.endpoints
           : endpoints // ignore: cast_nullable_to_non_nullable
@@ -135,6 +144,7 @@ abstract class _$$_EngineCopyWith<$Res> implements $EngineCopyWith<$Res> {
       String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           EngineType type,
+      String? localEndpointId,
       List<Endpoint>? endpoints,
       String? apiKey});
 }
@@ -156,6 +166,7 @@ class __$$_EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
     Object? name = freezed,
     Object? host = freezed,
     Object? type = freezed,
+    Object? localEndpointId = freezed,
     Object? endpoints = freezed,
     Object? apiKey = freezed,
   }) {
@@ -184,6 +195,10 @@ class __$$_EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as EngineType,
+      localEndpointId: localEndpointId == freezed
+          ? _value.localEndpointId
+          : localEndpointId // ignore: cast_nullable_to_non_nullable
+              as String?,
       endpoints: endpoints == freezed
           ? _value._endpoints
           : endpoints // ignore: cast_nullable_to_non_nullable
@@ -207,6 +222,7 @@ class _$_Engine implements _Engine {
       required this.host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           required this.type,
+      this.localEndpointId,
       final List<Endpoint>? endpoints,
       this.apiKey})
       : _endpoints = endpoints;
@@ -239,6 +255,10 @@ class _$_Engine implements _Engine {
   @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
   final EngineType type;
 
+  /// Engine local endpoint ID
+  @override
+  final String? localEndpointId;
+
   /// Engine endpoints
   final List<Endpoint>? _endpoints;
 
@@ -257,7 +277,7 @@ class _$_Engine implements _Engine {
 
   @override
   String toString() {
-    return 'Engine(id: $id, createdAt: $createdAt, isInitialized: $isInitialized, name: $name, host: $host, type: $type, endpoints: $endpoints, apiKey: $apiKey)';
+    return 'Engine(id: $id, createdAt: $createdAt, isInitialized: $isInitialized, name: $name, host: $host, type: $type, localEndpointId: $localEndpointId, endpoints: $endpoints, apiKey: $apiKey)';
   }
 
   @override
@@ -273,6 +293,8 @@ class _$_Engine implements _Engine {
             const DeepCollectionEquality().equals(other.host, host) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
+                .equals(other.localEndpointId, localEndpointId) &&
+            const DeepCollectionEquality()
                 .equals(other._endpoints, _endpoints) &&
             const DeepCollectionEquality().equals(other.apiKey, apiKey));
   }
@@ -287,6 +309,7 @@ class _$_Engine implements _Engine {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(host),
       const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(localEndpointId),
       const DeepCollectionEquality().hash(_endpoints),
       const DeepCollectionEquality().hash(apiKey));
 
@@ -310,6 +333,7 @@ abstract class _Engine implements Engine {
       required final String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           required final EngineType type,
+      final String? localEndpointId,
       final List<Endpoint>? endpoints,
       final String? apiKey}) = _$_Engine;
 
@@ -340,6 +364,10 @@ abstract class _Engine implements Engine {
   /// Engine type
   @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
   EngineType get type => throw _privateConstructorUsedError;
+  @override
+
+  /// Engine local endpoint ID
+  String? get localEndpointId => throw _privateConstructorUsedError;
   @override
 
   /// Engine endpoints

@@ -30,6 +30,9 @@ class Engine with _$Engine {
     /// Engine type
     @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson) required EngineType type,
 
+    /// Engine local endpoint ID
+    String? localEndpointId,
+
     /// Engine endpoints
     List<Endpoint>? endpoints,
 
@@ -46,7 +49,8 @@ class Engine with _$Engine {
         name: row[3],
         host: row[4],
         type: _engineTypeFromJson(row[5]),
-        apiKey: row[6],
+        localEndpointId: row[6],
+        apiKey: row[7],
       );
 }
 
