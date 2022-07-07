@@ -12,3 +12,7 @@
 
 - Fix example data
 - Add EngineApiKeysFetchFailedException model
+
+## 0.0.4
+
+- Manage engine's local endpoint
