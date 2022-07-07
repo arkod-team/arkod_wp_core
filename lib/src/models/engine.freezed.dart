@@ -40,7 +40,7 @@ mixin _$Engine {
   EngineType get type => throw _privateConstructorUsedError;
 
   /// Engine local endpoint ID
-  String? get localEndpointId => throw _privateConstructorUsedError;
+  int? get localEndpointId => throw _privateConstructorUsedError;
 
   /// Engine endpoints
   List<Endpoint>? get endpoints => throw _privateConstructorUsedError;
@@ -65,7 +65,7 @@ abstract class $EngineCopyWith<$Res> {
       String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           EngineType type,
-      String? localEndpointId,
+      int? localEndpointId,
       List<Endpoint>? endpoints,
       String? apiKey});
 }
@@ -118,7 +118,7 @@ class _$EngineCopyWithImpl<$Res> implements $EngineCopyWith<$Res> {
       localEndpointId: localEndpointId == freezed
           ? _value.localEndpointId
           : localEndpointId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       endpoints: endpoints == freezed
           ? _value.endpoints
           : endpoints // ignore: cast_nullable_to_non_nullable
@@ -144,7 +144,7 @@ abstract class _$$_EngineCopyWith<$Res> implements $EngineCopyWith<$Res> {
       String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           EngineType type,
-      String? localEndpointId,
+      int? localEndpointId,
       List<Endpoint>? endpoints,
       String? apiKey});
 }
@@ -198,7 +198,7 @@ class __$$_EngineCopyWithImpl<$Res> extends _$EngineCopyWithImpl<$Res>
       localEndpointId: localEndpointId == freezed
           ? _value.localEndpointId
           : localEndpointId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       endpoints: endpoints == freezed
           ? _value._endpoints
           : endpoints // ignore: cast_nullable_to_non_nullable
@@ -257,7 +257,7 @@ class _$_Engine implements _Engine {
 
   /// Engine local endpoint ID
   @override
-  final String? localEndpointId;
+  final int? localEndpointId;
 
   /// Engine endpoints
   final List<Endpoint>? _endpoints;
@@ -333,7 +333,7 @@ abstract class _Engine implements Engine {
       required final String host,
       @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson)
           required final EngineType type,
-      final String? localEndpointId,
+      final int? localEndpointId,
       final List<Endpoint>? endpoints,
       final String? apiKey}) = _$_Engine;
 
@@ -367,7 +367,7 @@ abstract class _Engine implements Engine {
   @override
 
   /// Engine local endpoint ID
-  String? get localEndpointId => throw _privateConstructorUsedError;
+  int? get localEndpointId => throw _privateConstructorUsedError;
   @override
 
   /// Engine endpoints

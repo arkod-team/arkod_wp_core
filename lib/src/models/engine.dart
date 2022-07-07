@@ -31,7 +31,7 @@ class Engine with _$Engine {
     @JsonKey(fromJson: _engineTypeFromJson, toJson: _engineTypeToJson) required EngineType type,
 
     /// Engine local endpoint ID
-    String? localEndpointId,
+    int? localEndpointId,
 
     /// Engine endpoints
     List<Endpoint>? endpoints,

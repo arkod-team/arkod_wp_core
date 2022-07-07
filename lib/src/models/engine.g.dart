@@ -13,7 +13,7 @@ _$_Engine _$$_EngineFromJson(Map<String, dynamic> json) => _$_Engine(
       name: json['name'] as String,
       host: json['host'] as String,
       type: _engineTypeFromJson(json['type'] as String),
-      localEndpointId: json['localEndpointId'] as String?,
+      localEndpointId: json['localEndpointId'] as int?,
       endpoints: (json['endpoints'] as List<dynamic>?)
           ?.map((e) => Endpoint.fromJson(e as Map<String, dynamic>))
           .toList(),
