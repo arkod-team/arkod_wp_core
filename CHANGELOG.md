@@ -16,3 +16,7 @@
 ## 0.0.4
 
 - Manage engine's local endpoint
+
+### hotfix 0.0.4+1**
+
+- Fix engine's local endpoint ID type
